@@ -17,4 +17,5 @@ while divisor > 0:
     num %= divisor
     divisor //= 10
 
-print("The sum of the digits is: {}".format(digit_sum))
+print("The sum of the digits is: {}".format(digit_su))
+
