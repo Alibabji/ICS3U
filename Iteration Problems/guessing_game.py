@@ -12,8 +12,6 @@ num = random.randint(low, high)
 player_guess = 0
 
 while player_guess != num:
-    player_guess = int(input("Enter your guess: "))
-
     print("Current Low: {}\tCurrent High: {}\tPlayer Types: {}".format(low, high, player_guess),end='   ')
 
     if player_guess < num:
@@ -24,3 +22,6 @@ while player_guess != num:
         high = player_guess - 1
     else:
         print('{:>8}'.format("You guessed it!"))
+
+    player_guess = int(input("Enter your guess: "))
+
