@@ -11,17 +11,24 @@ num = int()
 turn = 0
 
 def is_valid_entry(entry=int()):
+    global stoneNum,turn # uses global variable stoneNum
     if entry>0 and entry<4:
-        stoneNum-=num
-        return true
+        stoneNum-= entry # subtract stoneNum by inputted value
+        turn+=1 
     else:
         print("ERROR!! Please enter integer between 1 and 3!!!")
-        return false
 
 def draw_stones():
-    num=random.randint(1,3)
+    global num, stoneNum, turn
+    if stoneNum<=2:
+        num=random.randint(1,2)
+    elif stoneNum==1:
+        num=1
+    else:
+        num=random.randint(1,3)
     print("The computer takes {} stones.".format(num))
     stoneNum-=num
+    turn+=1
 
 # main function
 while stoneNum>0:
@@ -31,7 +38,6 @@ while stoneNum>0:
         is_valid_entry(num)
     else:
         draw_stones()
-    turn+=1
 
 if turn%2==0:
     print("The Computer beats the Player!")
